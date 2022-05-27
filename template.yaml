@@ -1,3 +1,7 @@
+#####
+# Adopting for purposes of Resilience Hub Bench Project - Nate Chandler-Smith
+#####
+
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 # ** Change this to something useful!
@@ -10,5 +14,4 @@ Resources:
       CodeUri: ./target
       Handler: src/lambda.handler
       Timeout: 5
-      Runtime: nodejs8.10
-
+      Runtime: nodejs16.x
