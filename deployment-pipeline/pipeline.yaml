@@ -1,3 +1,7 @@
+#####
+# Adopting for purposes of Resilience Hub Bench Project - Nate Chandler-Smith
+#####
+
 AWSTemplateFormatVersion: '2010-09-09'
 # *** Change this to something useful for you!
 Description: Multi Region Codepipeline Example
@@ -28,7 +32,7 @@ Parameters:
   # *** The owner of the Github repo for this application. Or delete this if you're not using Github
   GitHubOwner:
     Type: String
-    Default: symphoniacloud
+    Default: nchandlersmith-vr
     AllowedPattern: "[A-Za-z0-9-]+"
 
   # *** The Github repo for this application. Or delete this if you're not using Github
@@ -40,7 +44,7 @@ Parameters:
   # *** The Github branch for this particular pipeline. Or delete this if you're not using Github
   GitHubBranch:
     Type: String
-    Default: master
+    Default: main
     AllowedPattern: "[A-Za-z0-9-]+"
 
 Resources:
