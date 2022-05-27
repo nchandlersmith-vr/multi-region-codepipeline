@@ -71,11 +71,11 @@ Resources:
         - Region: us-east-1
           ArtifactStore:
             Type: S3
-            Location: !Sub '${ArtifactBucketNamePrefix}-us-east-1'
+            Location: !Sub '${ArtifactBucketNamePrefix}-${AWS::AccountId}-us-east-1'
         - Region: us-west-2
           ArtifactStore:
             Type: S3
-            Location: !Sub '${ArtifactBucketNamePrefix}-us-west-2'
+            Location: !Sub '${ArtifactBucketNamePrefix}-${AWS::AccountId}-us-west-2'
       RestartExecutionOnUpdate: true
       RoleArn: !GetAtt CodePipelineRole.Arn
       Stages:
@@ -176,9 +176,9 @@ Resources:
         # Make sure that this is the same list expected in your build script
         EnvironmentVariables:
         - Name: US_EAST_1_ARTIFACT_BUCKET
-          Value: !Sub '${ArtifactBucketNamePrefix}-us-east-1'
+          Value: !Sub '${ArtifactBucketNamePrefix}-${AWS::AccountId}-us-east-1'
         - Name: US_WEST_2_ARTIFACT_BUCKET
-          Value: !Sub '${ArtifactBucketNamePrefix}-us-west-2'
+          Value: !Sub '${ArtifactBucketNamePrefix}-${AWS::AccountId}-us-west-2'
       ServiceRole: !Ref CodeBuildRole
       Source:
         Type: CODEPIPELINE
